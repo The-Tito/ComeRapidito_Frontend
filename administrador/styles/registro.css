@@ -1,0 +1,280 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('/Assets/admi.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 1100px;
+  max-width: 1200px;
+}
+
+.izquierda {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.izquierda h1 {
+  font-size: 2.7rem;
+  margin: 0;
+}
+
+.izquierda h1:nth-child(3) {
+  color: #ff3c00;
+  font-weight: bold;
+}
+
+.formulario {
+  background-color: white;
+  border-radius: 15px;
+  padding: 35px;
+  width: 85%;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: 55%;
+}
+
+.formulario h1 {
+  color: #ff3c00;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+/* Mantener estilo pasos (botones 1 y 2) */
+.pasos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px; /* espacio entre botones */
+  width: 100%;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pasos span {
+  width: 50px;
+  height: 50px;
+  background-color: #ff3c00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.pasos span:hover {
+  background-color: #e03b00;
+  transform: scale(1.1);
+}
+
+.pasos span.activo {
+  box-shadow: 0 0 10px 3px #ff3c00;
+  background-color: #ff5b22;
+  transform: scale(1.15);
+}
+
+.pasos hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 3px dashed #ff3c00;
+  margin: 0 10px;
+  align-self: center;
+  height: 1px;
+  background-color: transparent;
+}
+
+/* MARGIN TOP AGREGADO A TODOS LOS DATOS */
+.formulario label,
+.formulario span,
+.formulario input[type="text"],
+.horas .campo,
+.selector-hora,
+.carga,
+.botones,
+.continuar-btn {
+  margin-top: 20px;
+}
+
+.formulario label,
+.formulario span {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.formulario input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Horas */
+.horas {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.horas .campo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.horas .campo label {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.selector-hora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.selector-hora input[type="number"] {
+  width: 90px;
+  font-size: 3.6rem;
+  text-align: center;
+  border: none;
+  border-bottom: 3px solid #ccc;
+  outline: none;
+  color: #ff3c00;
+}
+
+.selector-hora .separador {
+  font-size: 3.6rem;
+  color: black;
+  font-weight: bold;
+}
+
+.selector-hora select.ampm {
+  font-size: 1.4rem;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-weight: bold;
+  background-color: white;
+  color: #ff3c00;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Contenedores de carga de imagen lado a lado */
+.carga {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 25px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /* sin flex-wrap para que no bajen */
+}
+
+.caja-subida {
+  width: 48%;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 25px 10px;
+  text-align: center;
+  transition: border 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  background-color: #fafafa;
+}
+
+.caja-subida:hover {
+  border: 2px dashed #ff3c00;
+}
+
+.preview-imagen img {
+  max-height: 150px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Botones para seleccionar imagen fuera de las cajas */
+.botones-carga {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+}
+
+.boton-subir {
+  width: 48%;
+  padding: 14px 0;
+  background-color: #ff3c00;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.boton-subir:hover {
+  background-color: #e03b00;
+}
+
+.continuar-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
