@@ -9,33 +9,46 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-
 }
 
 .contenedor {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Mantiene espacio entre los dos divs principales */
   width: 90%;
-  height: 1100px;
+  height: 1100px; /* Considera si esta altura fija es necesaria, puede causar desbordamiento */
   max-width: 1200px;
 }
-
 .izquierda {
-  width: 15%;
+  width: 40%; /* Aumentado el ancho para dar más espacio al texto */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Apila los hijos verticalmente (el div que contiene los h1) */
+  align-items: center; /* Centra el contenido (el div) horizontalmente */
+  justify-content: center; /* Centra el contenido (el div) verticalmente */
+  /* Puedes ajustar el justify-content para alinear arriba o abajo si prefieres */
+  /* justify-content: flex-start; */
 }
+
+/* Regla para el div dentro de .izquierda que contiene los h1 */
+.izquierda div {
+  text-align: center; /* Centra el texto dentro de este div */
+}
+
 
 .izquierda h1 {
-  font-size: 2.7rem;
-  margin: 0;
+  font-size: 2.2rem; /* Ajustado el tamaño de fuente base para los h1 */
+  margin: 0; /* Elimina margen predeterminado */
+  color: white; /* Color del texto por defecto en blanco */
+  font-weight: 900; /* Hecho más negrita que 'bold'. Puedes probar valores como 700, 800, 900 */
+  line-height: 1.1; /* Ajusta el espacio entre líneas si es necesario */
 }
 
+/* Estilo específico para el tercer h1 ("COME RAPIDITO") */
 .izquierda h1:nth-child(3) {
-  color: #ff3c00;
-  font-weight: bold;
+  color: #ff3c00; /* Color naranja */
+  font-weight: 900; /* Asegura que sea igual de negrita */
+  font-size: 3.5rem; /* <<--- Aumentado significativamente el tamaño de fuente */
 }
+
 
 .formulario {
   background-color: white;
@@ -56,13 +69,12 @@ body {
   margin-top: 10px;
 }
 
-/* Mantener estilo pasos (botones 1 y 2) */
 .pasos {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  gap: 20px; /* espacio entre botones */
+  gap: 20px;
   width: 100%;
   max-width: 250px;
   margin-left: auto;
@@ -72,30 +84,32 @@ body {
 .pasos span {
   width: 50px;
   height: 50px;
-  background-color: #ff3c00;
-  color: white;
+  background-color: white;
+  border: 2px solid #ff3c00;
+  color: #ff3c00;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: bold;
+  justify-content: center;
+  line-height: 50px;
   font-size: 1.3rem;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  flex-shrink: 0;
+  margin: 0;
 }
 
 .pasos span:hover {
-  background-color: #e03b00;
-  transform: scale(1.1);
+  background-color: #ffe1d6;
+  transform: scale(1.05);
 }
 
 .pasos span.activo {
-  box-shadow: 0 0 10px 3px #ff3c00;
-  background-color: #ff5b22;
-  transform: scale(1.15);
+  background-color: #ff3c00;
+  color: white;
+  border-color: #ff3c00;
+  transform: scale(1.1);
 }
 
 .pasos hr {
@@ -108,20 +122,16 @@ body {
   background-color: transparent;
 }
 
-/* MARGIN TOP AGREGADO A TODOS LOS DATOS */
 .formulario label,
-.formulario span,
 .formulario input[type="text"],
 .horas .campo,
 .selector-hora,
 .carga,
-.botones,
 .continuar-btn {
   margin-top: 20px;
 }
 
-.formulario label,
-.formulario span {
+.formulario label {
   display: block;
   font-weight: bold;
   text-align: left;
@@ -138,7 +148,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Horas */
 .horas {
   display: flex;
   justify-content: space-between;
@@ -193,12 +202,9 @@ body {
   background-color: white;
   color: #ff3c00;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   cursor: pointer;
 }
 
-/* Contenedores de carga de imagen lado a lado */
 .carga {
   display: flex;
   flex-direction: row;
@@ -210,39 +216,55 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  /* sin flex-wrap para que no bajen */
 }
 
 .caja-subida {
   width: 48%;
-  border: 2px dashed #ccc;
+  box-shadow:  0 6px 8px rgba(0,0,0,0.2);
   border-radius: 10px;
   padding: 25px 10px;
   text-align: center;
   transition: border 0.3s;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 180px;
-  background-color: #fafafa;
+  background-color: #ffffff;
+  border: 2px dashed transparent;
+}
+
+.caja-subida img:first-child {
+   width: 30%;
+   height: auto;
+   margin-bottom: 10px;
 }
 
 .caja-subida:hover {
   border: 2px dashed #ff3c00;
 }
 
+.preview-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .preview-imagen img {
   max-height: 150px;
   border-radius: 8px;
   object-fit: contain;
+  width: auto;
+  height: auto;
 }
 
-/* Botones para seleccionar imagen fuera de las cajas */
 .botones-carga {
   margin-top: 12px;
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 100%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -251,20 +273,35 @@ body {
 
 .boton-subir {
   width: 48%;
-  padding: 14px 0;
-  background-color: #ff3c00;
+  padding: 14px 40px 14px 20px;
+  background-color: #fdfdfd;
   border: none;
   border-radius: 8px;
-  color: white;
+  color: rgb(7, 7, 7);
   font-weight: bold;
   cursor: pointer;
   font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow:  0 4px 6px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .boton-subir:hover {
-  background-color: #e03b00;
+  background-color: #ff3c00;
+  color: white;
+}
+
+.boton-subir img {
+  position: absolute;
+  right: 10px; /* <-- Cambiado de 'left' a 'right' */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: auto;
 }
 
 .continuar-btn {
@@ -277,4 +314,10 @@ body {
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continuar-btn:hover {
+   background-color: #e03b00;
 }
