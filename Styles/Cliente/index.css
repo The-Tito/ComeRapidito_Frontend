@@ -31,13 +31,13 @@ body {
 }
 
 .encabezado-logo img {
-    height: 40px; 
+    height: 38px; 
 }
 
 .encabezado-lista {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 120px;
 }
 
 .encabezado-enlace {
@@ -49,7 +49,7 @@ body {
 .encabezado-iconos {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 60px;
 }
 
 .encabezado-icono {
@@ -58,10 +58,11 @@ body {
     gap: 40px;
     text-decoration: none;
     color: var(--color-primario);
+    font-weight: bold;
 }
 
 a.encabezado-icono{
-  gap: 2px;
+  gap: 4px;
 }
 .encabezado-icono img {
     height: 24px;
@@ -79,7 +80,9 @@ a.encabezado-icono{
     padding-left: 5%;
     margin-left: 20px;
     margin-right: 20px;
-  border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
 }
 
 .seccion-principal-contenido {
@@ -89,7 +92,7 @@ a.encabezado-icono{
 
 .seccion-principal-titulo {
     font-family: var(--fuente-titulo);
-    font-size: 6rem;
+    font-size: 140px;
     line-height: 1;
     margin-bottom: 1rem;
     font-weight: normal;
@@ -121,7 +124,7 @@ a.encabezado-icono{
 
 .boton-primario {
     background-color: var(--color-secundario);
-    color: var(--color-texto);
+    color: white;
 }
 
 .boton-secundario {
@@ -131,21 +134,26 @@ a.encabezado-icono{
 .seccion-principal-imagen-contenedor {
     height: 450px; 
     overflow: hidden;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    padding-top: 40px;
 }
 
 .seccion-principal-imagen {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
+    border-radius: 20px;
+
+
 }
-
-
 
 .seccion-restaurantes {
     padding: 3rem 5%;
 }
-
+.seccion-restaurantes-encabezado{
+  display: flex;
+  justify-content: space-between;
+}
 .seccion-restaurantes-titulo {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -153,7 +161,7 @@ a.encabezado-icono{
 
 .seccion-restaurantes-filtros {
     display: flex;
-    gap: 1rem;
+    gap: 10px;
     margin-bottom: 2rem;
 }
 
@@ -161,11 +169,12 @@ a.encabezado-icono{
     padding: 0.6rem 1.5rem;
     border: 1px solid var(--color-borde);
     background-color: var(--color-blanco);
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: var(--fuente-principal);
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
 }
 
 .filtro:hover {
@@ -179,10 +188,14 @@ a.encabezado-icono{
     border-color: var(--color-primario);
 }
 
-
+.carruseles{
+  display: block;
+  gap: 20px;
+}
 .carrusel {
     position: relative;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -191,6 +204,7 @@ a.encabezado-icono{
 .carrusel-contenedor {
     overflow: hidden;
     flex-grow: 1;
+    scroll-padding-right: 1.5rem;
 }
 
 .carrusel-pista {
@@ -200,12 +214,13 @@ a.encabezado-icono{
 }
 
 .carrusel-item {
-    min-width: 300px; 
-    height: 150px;
+    min-width: 294px; 
+    height: 230px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     flex-shrink: 0;
+    margin-bottom: 50px;
 }
 
 .carrusel-item img {
