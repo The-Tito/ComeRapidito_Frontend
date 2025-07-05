@@ -21,13 +21,13 @@
             <ul class="encabezado-lista">
                 <li class="encabezado-item"><a href="#" class="encabezado-enlace">Home</a></li>
                 <li class="encabezado-item"><a href="#" class="encabezado-enlace">Menu</a></li>
-                <li class="encabezado-item"><a href="#" class="encabezado-enlace">Mi negocio</a></li>
+                <li class="encabezado-item"><a href="#" id="abrir-modal-negocio" class="encabezado-enlace">Mi negocio</a></li>
             </ul>
         </nav>
         <div class="encabezado-iconos">
-            <a href="" class="encabezado-icono"><img src="../../Assets/repartidores.png" alt="Icono delivery"></a>
+            <a href="" id="abrir-modal-repartidor" class="encabezado-icono"><img src="../../Assets/repartidores.png" alt="Icono delivery"></a>
             <a href="" class="encabezado-icono"><img src="../../Assets/carrito.png" alt="Icono carrito"></a>
-            <a href="" class="encabezado-icono"><img src="../../Assets/iconUsuario .png" alt="Icono usuario"> Iniciar Sesión</a>
+            <a href="" id="abrir-modal-login" class="encabezado-icono"><img src="../../Assets/iconUsuario .png" alt="Icono usuario"> Iniciar Sesión</a>
         </div>
     </header>
 
@@ -101,5 +101,33 @@
         </section>
     </main>
 
+    
+    <!-- Modal de iniciar sesion -->
+    <div class="modal-superposicion" id="modal-login">
+    <div class="modal">
+        <h2 class="modal-titulo">Iniciar sesión para continuar</h2>
+
+        <form class="formulario-inicio-sesion">
+            <div class="formulario-grupo">
+                <label for="email" class="formulario-etiqueta">Correo electrónico/Teléfono</label>
+                <input type="text" id="email" class="formulario-entrada" placeholder="ejemplo: josemarialopez@gmail.com" required>
+            </div>
+            <div class="formulario-grupo">
+                <label for="password" class="formulario-etiqueta">Contraseña</label>
+                <input type="password" id="password" class="formulario-entrada" placeholder="Value" required>
+            </div>
+        </form>
+
+        <p class="modal-enlace-registro">
+            ¿No tienes una cuenta? <a href="registroCuenta.html">Regístrate aquí</a>
+        </p>
+
+        <div class="modal-botones">
+            <button class="boton-modal boton-regresar" id="cerrar-modal-login">Regresar</button>
+            <button class="boton-modal boton-continuar">Continuar</button>
+        </div>
+    </div>
+</div>
 </body>
+<script src="../../JS/index.js"></script>
 </html>

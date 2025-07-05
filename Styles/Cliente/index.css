@@ -26,6 +26,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /*para que este encima de todo, fijo*/
     background-color: white;
    
 }
@@ -71,6 +74,9 @@ a.encabezado-icono{
     height: 30px;
 }
 
+main{
+  padding-top: 80px;
+}
 
 .seccion-principal {
     background-color: var(--color-primario);
@@ -256,4 +262,110 @@ a.encabezado-icono{
 .carrusel-boton:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+
+/*estilos para el modal de iniciar sesion*/
+.modal-superposicion {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.modal-superposicion-visible {
+    display: flex;
+}
+.modal {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 520px; /* Ancho máximo del modal */
+    text-align: left;
+}
+
+.modal-titulo {
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.formulario-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.formulario-etiqueta {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.formulario-entrada {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+}
+
+.modal-enlace-registro {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.modal-enlace-registro a {
+    color: var(--color-primario);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: space-between; /*para que ocupe todo, distribuido, como el i l i en figma*/
+    gap: 1rem;
+}
+
+.boton-modal {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+    transition: all 0.2s ease;
+}
+
+.boton-regresar {
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+}
+
+.boton-regresar:hover {
+    background-color: #f9f9f9;
+}
+
+.boton-continuar {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.boton-continuar:hover {
+    opacity: 0.9;
 }
