@@ -1,84 +1,96 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-image: url('/Assets/admi.png');
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  position: relative;
   color: white;
 }
 
-.contenedor {
-  display: flex;
-  justify-content: space-between; /* Mantiene espacio entre los dos divs principales */
-  width: 90%;
-  height: 1100px; /* Considera si esta altura fija es necesaria, puede causar desbordamiento */
+/* Contenedor general */
+.layout {
+  position: relative;
+  width: auto;
   max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  margin-left: 25px;
 }
-.izquierda {
-  width: 40%; /* Aumentado el ancho para dar más espacio al texto */
+
+/* Bloque de texto a la izquierda */
+.bloque-izquierda {
+  
+  width: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: column; /* Apila los hijos verticalmente (el div que contiene los h1) */
-  align-items: center; /* Centra el contenido (el div) horizontalmente */
-  justify-content: center; /* Centra el contenido (el div) verticalmente */
-  /* Puedes ajustar el justify-content para alinear arriba o abajo si prefieres */
-  /* justify-content: flex-start; */
+  flex-direction: column;
+  margin-left: 90px;
+  padding-top: 450px;
+  right: 100%;
+
 }
 
-/* Regla para el div dentro de .izquierda que contiene los h1 */
-.izquierda div {
-  text-align: center; /* Centra el texto dentro de este div */
+.bloque-izquierda .linea1,
+.bloque-izquierda .linea2 {
+  font-size: 5.8rem;
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.2;
+  color: white;
 }
 
-
-.izquierda h1 {
-  font-size: 2.2rem; /* Ajustado el tamaño de fuente base para los h1 */
-  margin: 0; /* Elimina margen predeterminado */
-  color: white; /* Color del texto por defecto en blanco */
-  font-weight: 900; /* Hecho más negrita que 'bold'. Puedes probar valores como 700, 800, 900 */
-  line-height: 1.1; /* Ajusta el espacio entre líneas si es necesario */
+.bloque-izquierda .linea3 {
+  font-size: 6.8rem;
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #ff3c00;
 }
 
-/* Estilo específico para el tercer h1 ("COME RAPIDITO") */
-.izquierda h1:nth-child(3) {
-  color: #ff3c00; /* Color naranja */
-  font-weight: 900; /* Asegura que sea igual de negrita */
-  font-size: 3.5rem; /* <<--- Aumentado significativamente el tamaño de fuente */
+/* Bloque formulario totalmente independiente */
+.bloque-derecha {
+  position: absolute;
+  top: 30%;           /* Sube un poco el formulario */
+  right: 20px;        /* Margen derecho pequeño */
+  transform: translateY(-50%);
+  width: 680px;       /* Ancho del formulario */
+  padding: 0;
+  height: 500px;
 }
 
-
+/* Formulario */
 .formulario {
   background-color: white;
   border-radius: 15px;
-  padding: 35px;
-  width: 85%;
+  padding: 50px;
   color: black;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   text-align: center;
   box-sizing: border-box;
-  margin-left: 55%;
+  width: 100%;
+  height: 1000px;
+  margin-left: 160%;
 }
 
 .formulario h1 {
   color: #ff3c00;
   font-size: 2rem;
-  margin-bottom: 25px;
-  margin-top: 10px;
+  margin-bottom: 35px;
+  margin-top: 20px;
 }
 
+
+
+
+/* Pasos */
 .pasos {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   gap: 20px;
-  width: 100%;
-  max-width: 250px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .pasos span {
@@ -91,13 +103,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 50px;
   font-size: 1.3rem;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  margin: 0;
 }
 
 .pasos span:hover {
@@ -108,7 +117,6 @@ body {
 .pasos span.activo {
   background-color: #ff3c00;
   color: white;
-  border-color: #ff3c00;
   transform: scale(1.1);
 }
 
@@ -116,28 +124,18 @@ body {
   flex-grow: 1;
   border: none;
   border-top: 3px dashed #ff3c00;
-  margin: 0 10px;
-  align-self: center;
-  height: 1px;
-  background-color: transparent;
 }
 
-.formulario label,
-.formulario input[type="text"],
-.horas .campo,
-.selector-hora,
-.carga,
-.continuar-btn {
-  margin-top: 20px;
-}
-
+/* Etiquetas */
 .formulario label {
   display: block;
   font-weight: bold;
   text-align: left;
   font-size: 1.3rem;
+  margin-top: 20px;
 }
 
+/* Campos de texto */
 .formulario input[type="text"] {
   width: 100%;
   padding: 14px;
@@ -148,146 +146,95 @@ body {
   box-sizing: border-box;
 }
 
+/* Horarios */
 .horas {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .horas .campo {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 .horas .campo label {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 .selector-hora {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  font-weight: bold;
-  margin-top: 20px;
+  gap: 10px;
 }
 
 .selector-hora input[type="number"] {
-  width: 90px;
-  font-size: 3.6rem;
+  width: 60px;
+  font-size: 2rem;
   text-align: center;
   border: none;
-  border-bottom: 3px solid #ccc;
+  border-bottom: 2px solid #ccc;
   outline: none;
   color: #ff3c00;
 }
 
 .selector-hora .separador {
-  font-size: 3.6rem;
+  font-size: 2rem;
   color: black;
-  font-weight: bold;
 }
 
 .selector-hora select.ampm {
-  font-size: 1.4rem;
-  padding: 14px 20px;
+  font-size: 1.2rem;
+  padding: 8px 12px;
   border-radius: 8px;
-  border: 1.5px solid #ccc;
-  font-weight: bold;
+  border: 1px solid #ccc;
   background-color: white;
   color: #ff3c00;
-  appearance: none;
-  cursor: pointer;
 }
 
+/* Área de carga de imágenes */
 .carga {
   display: flex;
-  flex-direction: row;
   gap: 10px;
-  margin-top: 25px;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 20px;
 }
 
 .caja-subida {
-  width: 48%;
-  box-shadow:  0 6px 8px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  padding: 25px 10px;
+  flex: 1;
+  padding: 15px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
   text-align: center;
-  transition: border 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 180px;
-  background-color: #ffffff;
-  border: 2px dashed transparent;
+  background-color: #f9f9f9;
 }
 
 .caja-subida img:first-child {
-   width: 30%;
-   height: auto;
-   margin-bottom: 10px;
-}
-
-.caja-subida:hover {
-  border: 2px dashed #ff3c00;
-}
-
-.preview-imagen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.preview-imagen img {
-  max-height: 150px;
-  border-radius: 8px;
-  object-fit: contain;
-  width: auto;
+  width: 50px;
   height: auto;
 }
 
+.preview-imagen img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Botones de carga */
 .botones-carga {
-  margin-top: 12px;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 20px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .boton-subir {
-  width: 48%;
-  padding: 14px 40px 14px 20px;
-  background-color: #fdfdfd;
+  flex: 1;
+  padding: 12px;
+  background-color: #eee;
   border: none;
   border-radius: 8px;
-  color: rgb(7, 7, 7);
   font-weight: bold;
   cursor: pointer;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow:  0 4px 6px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
 }
 
 .boton-subir:hover {
@@ -296,17 +243,14 @@ body {
 }
 
 .boton-subir img {
-  position: absolute;
-  right: 10px; /* <-- Cambiado de 'left' a 'right' */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 20px;
-  width: auto;
+  height: 16px;
+  margin-left: 8px;
 }
 
+/* Botón continuar */
 .continuar-btn {
   width: 100%;
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 14px;
   background-color: #ff3c00;
   color: white;
@@ -315,9 +259,19 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .continuar-btn:hover {
-   background-color: #e03b00;
+  background-color: #e03b00;
+}
+
+
+
+.logo-superior {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    width: 20%;     /* Ajusta el tamaño a tu gusto */
+    height: 100px;
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
 }
