@@ -15,7 +15,7 @@
 
 body {
     line-height: 1.5;
-    background-image:url('../Assets/fondoRegistroCliente.png');
+    background-image:url('../../Assets/fondoRegistroCliente.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
