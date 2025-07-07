@@ -28,7 +28,7 @@ body {
     padding: 1rem 5%;
     position: fixed;
     width: 100%;
-    z-index: 1000; /*para que este encima de todo, fijo*/
+    z-index: 1000; /*lo hace fije*/
     background-color: white;
    
 }
@@ -174,7 +174,7 @@ main{
 .filtro {
     padding: 0.6rem 1.5rem;
     border: 1px solid var(--color-borde);
-    background-color: var(--color-blanco);
+    background-color: white;
     border-radius: 10px;
     font-family: var(--fuente-principal);
     font-size: 1rem;
@@ -363,7 +363,7 @@ main{
 
 .boton-continuar {
     background-color: var(--color-primario);
-    color: var(--color-blanco);
+    color: white;
 }
 
 .boton-continuar:hover {
