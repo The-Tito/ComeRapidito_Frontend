@@ -290,7 +290,7 @@ main{
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 520px; /* Ancho máximo del modal */
+    max-width: 520px; 
     text-align: left;
 }
 
