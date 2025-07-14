@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar productos</title>
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/agregarProducto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- Sidebar reutilizable -->
+  <aside class="sidebar">
+    <!-- Logo -->
+    <div class="sidebar-header">
+      <img src="/Assets/Logo (1).png" alt="Logo de Come Rapidito">
+    </div>
+    <!-- Menú de Navegación -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item active">
+          <a href="#">
+            <i class="fas fa-th-large"></i>
+            <span>Informacion</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#">
+            <i class="fas fa-store"></i>
+            <span>Productos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Pedidos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#">
+            <i class="fas fa-history"></i>
+            <span>Historial</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Botón de Logout -->
+    <div class="sidebar-footer">
+      <a href="#" class="logout-button">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+  
+  <!-- Contenido principal -->
+  <div class="main-wrapper">
+    <!-- HEADER ARRIBA -->
+    <div class="section-header">
+      <div class="section-title">
+        <h1>Agregar productos</h1>
+      </div>
+      <div class="section-user">
+        <div class="avatar">
+          <span>E</span>
+        </div>
+        <span class="username">
+          <i class="fa-regular fa-user"></i> Usuario
+        </span>
+      </div>
+    </div>
+    <!-- CONTENIDO PRINCIPAL DEBAJO -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="top-left">
+          <label>Especialidad:</label>
+          <select><option>Especialidad</option></select>
+          <label>Tipo:</label>
+          <select><option>Tipo</option></select>
+          <select><option>Disponible</option></select>
+        </div>
+        <div class="top-right">
+          <button id="btnGuardar"><i class="fa-solid fa-floppy-disk"></i> Guardar productos</button>
+        </div>
+      </div>
+      <!-- Aquí tus cards de productos -->
+    </div>
+  </div>
+</body>
+</html>
