@@ -298,3 +298,14 @@ body {
   border-radius: 7px;
   font-weight: 600;
 }
+.input-admin {
+  width: 100%;
+  padding: 20px;
+  margin-top: 5px;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+}
+
